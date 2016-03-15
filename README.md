@@ -1,8 +1,7 @@
 # MuseumShows
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/museum_shows`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Museum Shows!! This is a CLI based gem that gathers information about exhibits at museums in the NY area and tells the user about the shows currently playing at the museum they choose. The user can get a detailed description of any of the shows.
+Current Museums are: Moma, Guggenheim, Museum of Natural History, and the Whitney.
 
 ## Installation
 
@@ -32,7 +31,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/museum_shows.
+Bug reports and pull requests are welcome on GitHub at https://github.com/bedwardsphoto/museum_shows.
 
 
 ## License
