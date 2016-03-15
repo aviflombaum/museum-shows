@@ -1,5 +1,8 @@
-require "museum_shows/version"
-
-module MuseumShows
-  # Your code goes here...
-end
+require_relative './museum_shows/version.rb'
+require_relative './command_line.rb'
+require_relative './museums.rb'
+require_relative './scraper.rb'
+require_relative './shows.rb'
+require 'open-uri'
+require 'pry'
+require 'nokogiri'

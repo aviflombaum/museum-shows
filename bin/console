@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+#require_relative "../lib/command_line.rb"
 require "bundler/setup"
 require "museum_shows"
 
