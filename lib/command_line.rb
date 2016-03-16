@@ -98,6 +98,9 @@ def select_show_by_museum
     @input5=gets.strip.downcase
     if @input5== "y"
     select_show_by_museum
+    elsif @input5=="exit"
+      @input="exit"
+      exit
    else 
     call
     end

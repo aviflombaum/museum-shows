@@ -1,5 +1,5 @@
 require_relative "./scraper.rb"
-require_relative "./shows.rb"
+
 
 class Museum
 attr_accessor :name, :exhibits
