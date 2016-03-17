@@ -42,7 +42,9 @@ def call
       "I don't understand what you entered, try again"
       call
     end
-
+    if @input=="exit"
+      break
+    end
 
  end
 end
@@ -93,9 +95,13 @@ def select_show_by_museum
       puts "#{exhibit_info[:about_exhibit]}"
     
     end
+    if @input=="exit"
+      call
+    else
     puts ""
     puts "Would you like to see the list of shows from #{Museum.all[@input.to_i-1].name} again? (y/n)"
     @input5=gets.strip.downcase
+    end
     if @input5== "y"
     select_show_by_museum
     elsif @input5=="exit"
@@ -111,6 +117,7 @@ def exit
 
   puts "Thank you for using Museum Shows!"
   puts "Goodbye."
+
 end
 
 end
