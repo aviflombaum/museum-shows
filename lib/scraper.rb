@@ -44,21 +44,6 @@ class Scraper
       end
     end
 
-    def self.met_scraper
-      exhibit_info={}
-      met= Nokogiri::HTML(open("http://www.metmuseum.org/visit/met-fifth-avenue"))
-      met.css("div.grid-listing__item").collect do |exhibit|
-        exhibit_info={
-          :title=> exhibit.css("h2.card__title").text,
-          :closing_date=> exhibit.css("p.card__meta strong").text,
-          :exhibit_link => "http://www.metmuseum.org#{exhibit.css("a.card--exhibit").attribute("href").value}"
-        }
-        exhibit_page= Nokogiri::HTML(open(exhibit_info[:exhibit_link]))
-        exhibit_info[:about_exhibit]= exhibit_page.css("div.rich-text p").text
-        exhibit_info
-      end
-    end
-
     def self.nat_scraper
       exhibit_info={}
       nat= Nokogiri::HTML(open("http://www.amnh.org/exhibitions/current-exhibitions"))
