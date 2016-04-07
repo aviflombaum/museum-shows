@@ -1,25 +1,24 @@
-require_relative "./scraper.rb"
-
-
 class Museum
   attr_accessor :name, :exhibits
-  @@all=[]
+  @@all = []
 
-  def initialize(name,exhibits_array)
-    @name=name
-    @exhibits=[]  
-    exhibits_array.collect do |exhibit| 
-      holder=[]
-      e = Exhibit.new(self) 
-      holder=e
-      @exhibits<< holder
-      exhibit.each do |key, value|
-        e.send("#{key}=", value)
-      end  
-    end
-    @@all<<self
+  def self.find(id)
+    @@all[id.to_i-1]
   end
 
+  def initialize(name, exhibits_array)
+    @name = name
+
+    @exhibits = exhibits_array.collect do |exhibit_attributes|
+      Exhibit.new(self, exhibit_attributes)
+    end
+
+    @@all << self
+  end
+
+  def find_exhibit(id)
+    self.exhibits[id.to_i-1]
+  end
 
   def self.all
     @@all
@@ -30,6 +29,4 @@ class Museum
       puts "#{index+1}.     #{museum.name}"
     end
   end
-
-
 end
